@@ -5,6 +5,11 @@ import (
 	"os"
 )
 
-func GetDesktopFiles(filter *string) ([]fs.DirEntry, error) {
-	return os.ReadDir("/usr/share/applications")
+func GetDesktopFiles(searchString *string) ([]fs.DirEntry, error) {
+	var files []fs.DirEntry
+	files, err := os.ReadDir("/usr/share/applications")
+	if err != nil {
+			
+	}
+	return files, err
 }
